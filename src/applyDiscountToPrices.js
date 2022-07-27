@@ -1,12 +1,12 @@
 const discountPrices = (sentence, discount) =>
   sentence
     .split(" ")
-    .map((row) => {
-      return row.replace(/^\$(\d+)$/g, (_, group) => {
+    .map((row) =>
+      row.replace(/^\$(\d+)$/g, (_, group) => {
         const discountedPrice = (group - (group * discount) / 100).toFixed(2);
         return `$${discountedPrice}`;
-      });
-    })
+      })
+    )
     .join(" ");
 
 console.log(
