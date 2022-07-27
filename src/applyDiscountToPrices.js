@@ -1,5 +1,5 @@
-const discountPrices = (sentence, discount) => {
-  return sentence
+const discountPrices = (sentence, discount) =>
+  sentence
     .split(" ")
     .map((row) => {
       return row.replace(/^\$(\d+)$/g, (_, group) => {
@@ -8,7 +8,6 @@ const discountPrices = (sentence, discount) => {
       });
     })
     .join(" ");
-};
 
 console.log(
   discountPrices("$2$3 $10 $100 $1 200 $33 33$ $$ $99 $99999 $9999999999", 0)
