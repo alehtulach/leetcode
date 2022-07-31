@@ -36,10 +36,7 @@ const canReorderDoubled = function (arr) {
     count = count + ((zeroNums.get(0) / 2) ^ 0);
   }
 
-  if (count === arr.length / 2) {
-    return true;
-  }
-  return false;
+  return count === arr.length / 2;
 };
 
 canReorderDoubled([2, 1, 2, 1, 1, 1, 2, 2]);
