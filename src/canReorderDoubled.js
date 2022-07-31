@@ -27,7 +27,6 @@ const canReorderDoubled = function (arr) {
     const key = negativeKeys[i];
     numsProc(negativeNums, key);
   }
-
   for (let i = 0; i < positiveKeys.length; i++) {
     const key = positiveKeys[i];
     numsProc(positiveNums, key);
