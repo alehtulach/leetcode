@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-const jump = function (nums) {
+const jump = (nums) => {
   let jump = 0;
   let stepsIdx = [0, 0];
 
