@@ -12,9 +12,9 @@ const permute = (nums) => {
     for (let i = 0; i < nums.length; i++) {
       let copy = [...nums];
       copy.splice(i, 1);
-      let data = calc(copy);
-      for (let j = 0; j < data.length; j++) {
-        let item = data[j];
+      let items = calc(copy);
+      for (let j = 0; j < items.length; j++) {
+        let item = items[j];
         res.push(Array.isArray(item) ? [...item, nums[i]] : [item, nums[i]]);
       }
     }
