@@ -24,4 +24,20 @@ const numDecodings = (s) => {
   return res;
 };
 
-numDecodings("226");
+const numDecodings1 = (s) => {
+  let cache = { [s.length]: 1 };
+  for (let i = s.length - 1; i >= 0; i--) {
+    if (s[i] === "0") {
+      cache[i] = 0;
+    } else {
+      cache[i] = cache[i + 1];
+    }
+    let substr = parseInt(s.substring(i, i + 2));
+    if (substr >= 10 && substr <= 26) {
+      cache[i] += cache[i + 2];
+    }
+  }
+  return cache[0];
+};
+
+numDecodings1("226");
