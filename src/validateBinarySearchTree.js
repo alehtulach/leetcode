@@ -11,19 +11,33 @@
  * @return {boolean}
  */
 const isValidBST = (root) => {
-  let isValid = true;
-  const dfs = (l, r, root) => {
-    if (!isValid || !root) return;
-    if (root.val < r && root.val > l) {
-      dfs(l, root.val, root.left);
-      dfs(root.val, r, root.right);
-    } else {
-      isValid = false;
-    }
+  const ver1 = () => {
+    let isValid = true;
+    const dfs = (l, r, root) => {
+      if (!isValid || !root) return;
+      if (root.val < r && root.val > l) {
+        dfs(l, root.val, root.left);
+        dfs(root.val, r, root.right);
+      } else {
+        isValid = false;
+      }
+    };
+    dfs(Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY, root);
+    return isValid;
   };
+  ver1();
 
-  dfs(Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY, root);
-  return isValid;
+  const ver2 = () => {
+    const valid = (node, left, right) => {
+      if (!node) return true;
+      if (!(node.val < right && node.val > left)) return false;
+      return (
+        valid(node.left, left, node.val) && valid(node.right, node.val, right)
+      );
+    };
+    return valid(root, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
+  };
+  ver2();
 };
 
 function TreeNode(val, left, right) {
