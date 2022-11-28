@@ -1,4 +1,4 @@
-const l1Arr = [9, 9, 9, 9, 9, 9, 9];
+const l1Arr = [9, 9, 9, 9, 9, 9, 9, 9];
 const l2Arr = [9, 9, 9];
 
 function ListNode(val, next) {
