@@ -40,4 +40,4 @@ const numDecodings1 = (s) => {
   return cache[0];
 };
 
-numDecodings1("226");
+numDecodings1("227");
